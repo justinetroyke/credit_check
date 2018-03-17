@@ -18,6 +18,15 @@ class CreditCheck
     doubled.compact
   end
 
+  def sum_over_10
+    summed_over_10 = double.map do |number|
+      if number > 9
+        number - 9
+      else
+        number
+      end
+    end
+  end
 end
 
 # def checker

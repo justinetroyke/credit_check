@@ -31,9 +31,10 @@ class CreditCheckTest < Minitest::Test
     assert_equal [8,10,14,4,16,16,8,10], check.double
   end
 
-  def test_digits_over_10_get_added
-    skip
+  def test_sum_of_digits_over_10
+    check = CreditCheck.new("5541808923795240")
 
+    assert_equal [8,1,5,4,7,7,8,1], check.sum_over_10
   end
 
 end

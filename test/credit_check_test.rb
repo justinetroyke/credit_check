@@ -37,4 +37,16 @@ class CreditCheckTest < Minitest::Test
     assert_equal [8,1,5,4,7,7,8,1], check.sum_over_10
   end
 
+  def test_even_digits_of_number_gets_stored_in_new_array
+    check = CreditCheck.new("5541808923795240")
+
+    assert_equal [0,2,9,3,9,0,1,5], check.even_digits
+  end
+
+  def test_sum_of_all_digits
+    check = CreditCheck.new("5541808923795240")
+
+    assert_equal 70, check.total_sum
+  end
+
 end

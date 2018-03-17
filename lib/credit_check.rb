@@ -18,6 +18,15 @@ class CreditCheck
     doubled.compact
   end
 
+  def even_digits
+    even = convert_to_array.map.with_index do |number, index|
+      if index.even?
+        number
+      end
+    end
+    even.compact
+  end
+
   def sum_over_10
     summed_over_10 = double.map do |number|
       if number > 9
@@ -26,6 +35,10 @@ class CreditCheck
         number
       end
     end
+  end
+
+  def total_sum
+   (sum_over_10 + even_digits).sum
   end
 end
 

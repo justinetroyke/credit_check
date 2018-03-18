@@ -70,12 +70,4 @@ class CreditCheckTest < Minitest::Test
     assert_equal "The number is valid!", check_1.card_valid?
     assert_equal "The number is invalid!", check_2.card_valid?
   end
-
-  def test_card_checker_runs_all_methods
-    check_1 = CreditCheck.new("6011797668867828")
-    check_2 = CreditCheck.new("6011797668868728")
-
-    assert_equal "The number is valid!", check_1.card_checker
-    assert_equal "The number is invalid!", check_2.card_checker
-  end
 end

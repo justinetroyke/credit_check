@@ -1,4 +1,3 @@
-require 'pry'
 class CreditCheck
 
   attr_reader :card_number
@@ -49,9 +48,3 @@ class CreditCheck
     end
   end
 end
-
-# def checker
-  # multiply every other
-  # add digits over 10 togerther
-  # sum results
-# end

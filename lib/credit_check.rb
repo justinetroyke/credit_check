@@ -40,6 +40,14 @@ class CreditCheck
   def total_sum
    (sum_over_10 + even_digits).sum
   end
+
+  def card_valid?
+    if total_sum % 10 == 0
+      "The number is valid!"
+    else
+      "The number is invalid!"
+    end
+  end
 end
 
 # def checker

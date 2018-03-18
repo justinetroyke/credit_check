@@ -49,4 +49,33 @@ class CreditCheckTest < Minitest::Test
     assert_equal 70, check.total_sum
   end
 
+  def test_sum_is_divisible_by_10_returns_true
+    check = CreditCheck.new("5541808923795240")
+
+    assert check.card_valid?
+  end
+
+  def test_correct_output_for_true_and_false
+    check = CreditCheck.new("5541808923795240")
+    check_2 = CreditCheck.new("4024007106512380")
+
+    assert_equal "The number is valid!", check.card_valid?
+    assert_equal "The number is invalid!", check_2.card_valid?
+  end
+
+  def test_amex_cards
+    check_1 = CreditCheck.new("342804633855673")
+    check_2 = CreditCheck.new("342801633855673")
+
+    assert_equal "The number is valid!", check_1.card_valid?
+    assert_equal "The number is invalid!", check_2.card_valid?
+  end
+
+  def test_card_checker_runs_all_methods
+    check_1 = CreditCheck.new("6011797668867828")
+    check_2 = CreditCheck.new("6011797668868728")
+
+    assert_equal "The number is valid!", check_1.card_checker
+    assert_equal "The number is invalid!", check_2.card_checker
+  end
 end
